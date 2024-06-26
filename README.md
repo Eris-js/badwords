@@ -1,22 +1,20 @@
 
-# Vietnamese Bad Words
+# Bad Words
 This package is for developers to be able to easily integrate bad word checking into their projects.
 This package can return bad words in array or regular expression (regex) form.
-
 Enjoy!
+
+Click [here]('https://github.com/Eris-js/badwords/blob/master/README.md') for International English version
 
 Install
 =======
 
 ```shell
 # NPM
-npm install vn-badwords
+npm install badwords
 
 # YARN
-yarn add vn-badwords
-
-# PNPM
-pnpm i vn-badwords
+yarn add badwords
 ```
 
 Import
@@ -25,38 +23,52 @@ Import
 CommonJS (Node)
 
 ```js
-const { badWords, blackList } = require('vn-badwords');
+const { badWords } = require('badwords');
 ```
 
 ES6
 
 ```js
-import { badWords, blackList } from 'vn-badwords';
+import { badWords } from 'badwords';
 ```
 
 Usage
 =====
 
 ```js
-const text = "Có làm thì mới có ăn, không làm mà đòi có ăn thì ăn con cặc.";
+const text = "Hey, don't be such an ass";
+const lang = 'en'; // 'en' of 'vi'
 
-badWords(text, { validate: true });
+badWords(text, { validate: true, lang });
+// output: **** offHey, don't be such an ***
+
+badWords(text, { replacement: '*', lang });
 // output: true
 
-badWords(text, { replacement: '*' });
-// output: Có làm thì mới có ăn, không làm mà đòi có ăn thì ăn con ***.
+badWords(text, { replacement: '*', blacklist: (defaultList) => [...defaultList, "fuck", "don't"] });
+// output: **** offHey, ***** be such an ass
 
-badWords(text, '*');
-// output similar to BadWords(text, { replacement: '*' });
-
-badWords(text, '*', (badwordsMatch, count) => console.log(badwordsMatch, count));
-// returns value and run the callback function
-
-badWords(text, { replacement: '*', blackList: (defaultList) => [...defaultList, 'có', 'làm'] });
-// custom sensitive words. Output: ** *** thì mới ** ăn, không *** mà đòi ** ăn thì ăn con ***.
+badWords(text, { replacement: '*', lang }, (badwordsMatch, count) => console.log(badwordsMatch, count));
+// output: [ 'Fuck', 'ass' ] 2
 ```
+
+
+[![Star History Chart](https://api.star-history.com/svg?repos=Eris-js/badwords&type=Timeline)](https://star-history.com/#Eris-js/badwords&Timeline)
 
 =======
 
-Tham gia server hỗ trợ để góp ý cũng như là đóng góp từ khóa nhé: https://discord.gg/pUhzvB4hcs
+# Contributing to the Vietnamese Offensive Words list
+We are welcome every contribution to this Vietnamese Offensive Words list. Please open a Pull Request (insert link here), or submit an issue (insert link here) if you want to contribute a new, smelly offensive word to the list. The new word must be inserted in its corresponding group (if possible).
+
+### The following word format are accepted
+- Original Vietnamese word with native accent
+- Word variant written in short form, or teencode
+### The following word formats might not be accepted
+- For an already listed word, we might not accept word phrase that already contains it.
+- E.g: Already in listing "đụ má", we might not accept "đụ má mày"
+- Regular personal pronoun. E.g: "mày", "tao"
+- Single word that is only offensive if used in certain context. E.g: "chó"
+- Meaningful negative words does not emphasize insulting attitude. E.g: "dốt", "đần"
+
+We use the Vietnamese word source [blue-eyes-vn](https://github.com/blue-eyes-vn)
 
