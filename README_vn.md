@@ -4,7 +4,7 @@ Gói này dành cho các nhà phát triển để có thể dễ dàng tích h�
 Gói này có thể trả về các từ xấu ở dạng mảng hoặc biểu thức chính quy (regex).
 Thưởng thức!
 
-Bấm vào [đây]('https://github.com/Eris-js/badwords/blob/master/README_vn.md') để xem phiên bản tiếng Việt
+Bấm vào [đây](https://github.com/Eris-js/badwords/blob/master/README.md) để xem phiên bản tiếng Anh
 
 Cài đặt
 =======
