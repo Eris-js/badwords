@@ -1,0 +1,1 @@
+export { badWords } from './lib/blacklist';

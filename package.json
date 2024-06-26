@@ -1,0 +1,34 @@
+{
+  "name": "badwords",
+  "version": "1.0.0",
+  "description": "This package is for developers to be able to easily integrate bad word checking into their projects.\\r This package can return bad words in array or regular expression (regex) form.",
+  "author": "Quang Sáng",
+  "license": "ISC",
+  "private": true,
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    "import": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "require": {
+      "types": "./dist/index.d.cts",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "dependencies": {
+    "typescript": "^5.5.2"
+  },
+  "scripts": {
+    "build": "tsup",
+    "test": "tsx src/test.ts"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.9",
+    "tsup": "^8.1.0",
+    "tsx": "^4.15.7"
+  }
+}
