@@ -4,7 +4,7 @@ This package is for developers to be able to easily integrate bad word checking 
 This package can return bad words in array or regular expression (regex) form.
 Enjoy!
 
-Click [here](https://github.com/Eris-js/badwords/blob/master/README_vn.md) for International English version
+Click [here](https://github.com/Eris-js/badwords/blob/master/README_vn.md) for International VietNamese version
 
 Install
 =======
